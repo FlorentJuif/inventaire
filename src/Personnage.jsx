@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import Armurie from "./armurie";
 import Stuff from "./Stuff";
+import MainDroite from "./mainDroite";
 
 const Personnage = () => {
   const [armes, setArmes] = useState([
@@ -30,24 +31,30 @@ const Personnage = () => {
     <div className="personnage">
       <Stuff
         onClickMd={() => {
-          setArmeDroite(undefined);
-          if (armeDroite !== undefined) {
-            // si Arme droite a une arme
-            setArmes([...armes, armeDroite]); // remet l'arme dans l'armurie
+          if (armeDroite === undefined) {
+            setArmeDroite(quelArme);
+            setArmes(armes.filter(restant => restant !== quelArme));
+            setQuelArme(undefined);
+          } else {
+            setArmeDroite(setArmes([...armes, armeDroite]));
           }
         }}
         onClickMg={() => {
-          setArmeGauche(undefined)
-          if (armeGauche !== undefined) {
-            // si arme gauche à une arme
-            setArmes([...armes, armeGauche]); // remet l'arme dans l'armurie
+          if (armeGauche === undefined) {
+            setArmeGauche(quelArme);
+            setArmes(armes.filter(restant => restant !== quelArme));
+            setQuelArme(undefined);
+          } else {
+            setArmeGauche(setArmes([...armes, armeGauche]));
           }
         }}
         onClickCeinture={() => {
-          setArmeCeinture(undefined);
-          if (armeCeinture !== undefined) {
-            // si la ceinture à une arme
-            setArmes([...armes, armeCeinture]); // remet l'arme dans l'armurie
+          if (armeCeinture === undefined) {
+            setArmeCeinture(quelArme);
+            setArmes(armes.filter(restant => restant !== quelArme));
+            setQuelArme(undefined);
+          } else {
+            setArmeCeinture(setArmes([...armes, armeCeinture]));
           }
         }}
         armeDroite={armeDroite}
@@ -57,7 +64,9 @@ const Personnage = () => {
       <Armurie
         armes={armes}
         onClickArme={arme => {
-          if (armeDroite === undefined) {
+          setQuelArme(arme);
+
+          /* if (armeDroite === undefined) {
             // si pas d'arme à droite
             setArmes(armes.filter(restant => restant !== arme)); // supprime une arme de l'amurie
             setArmeDroite(arme); // met l'arme dans la main droite
@@ -69,7 +78,7 @@ const Personnage = () => {
             // si pas d'arme ceinture
             setArmes(armes.filter(restant => restant !== arme)); // supprime une arme de l'amurie
             setArmeCeinture(arme); // met l'arme à la ceinture
-          }
+          } */
         }}
       />
     </div>
