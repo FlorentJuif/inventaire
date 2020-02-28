@@ -1,5 +1,5 @@
 .App {
-  text-align: center;
+  text-align: left;
 }
 
 .App-logo {
@@ -35,4 +35,38 @@
   to {
     transform: rotate(360deg);
   }
+}
+.personnage{
+  display:flex;
+  flex-direction: column
+
+}
+
+.mainDroite{
+  
+  background-color:rgb(150, 11, 11);
+  text-align:center ;
+  border-style: solid;
+ 
+}
+.ceinture{
+  background-color: saddlebrown;
+  text-align:center ;
+  border-style: solid;
+}
+.mainGauche{
+  background-color: slateblue;
+  text-align:center ;
+  border-style: solid;
+}
+.armurie{
+  display:flex;
+  background-color: steelblue;
+  text-align:left ;
+  border-style: solid;
+}
+
+.stuff{
+  display: flex;
+  flex-direction: row;
 }
