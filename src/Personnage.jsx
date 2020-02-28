@@ -24,7 +24,7 @@ const Personnage = () => {
   const [armeDroite, setArmeDroite] = useState();
   const [armeCeinture, setArmeCeinture] = useState();
   const [armeGauche, setArmeGauche] = useState();
-  const [quelArme,setQuelArme]=useState()
+  const [quelArme, setQuelArme] = useState();
 
   return (
     <div className="personnage">
@@ -32,20 +32,22 @@ const Personnage = () => {
         onClickMd={() => {
           setArmeDroite(undefined);
           if (armeDroite !== undefined) {
-            setArmes([...armes, armeDroite])
-          ;
+            // si Arme droite a une arme
+            setArmes([...armes, armeDroite]); // remet l'arme dans l'armurie
           }
         }}
         onClickMg={() => {
-          setArmeGauche(undefined);
+          setArmeGauche(undefined)
           if (armeGauche !== undefined) {
-            setArmes([...armes, armeGauche]);
+            // si arme gauche à une arme
+            setArmes([...armes, armeGauche]); // remet l'arme dans l'armurie
           }
         }}
         onClickCeinture={() => {
           setArmeCeinture(undefined);
           if (armeCeinture !== undefined) {
-            setArmes([...armes, armeCeinture]);
+            // si la ceinture à une arme
+            setArmes([...armes, armeCeinture]); // remet l'arme dans l'armurie
           }
         }}
         armeDroite={armeDroite}
@@ -55,16 +57,18 @@ const Personnage = () => {
       <Armurie
         armes={armes}
         onClickArme={arme => {
-          
           if (armeDroite === undefined) {
-            setArmes(armes.filter(restant => restant !== arme));
-            setArmeDroite(arme);
+            // si pas d'arme à droite
+            setArmes(armes.filter(restant => restant !== arme)); // supprime une arme de l'amurie
+            setArmeDroite(arme); // met l'arme dans la main droite
           } else if (armeGauche === undefined) {
-            setArmes(armes.filter(restant => restant !== arme));
-            setArmeGauche(arme);
+            // si pas d'arme à gauche
+            setArmes(armes.filter(restant => restant !== arme)); // supprime une arme de l'amurie
+            setArmeGauche(arme); // met l'arme dans la main gauche
           } else if (armeCeinture === undefined) {
-            setArmes(armes.filter(restant => restant !== arme));
-            setArmeCeinture(arme);
+            // si pas d'arme ceinture
+            setArmes(armes.filter(restant => restant !== arme)); // supprime une arme de l'amurie
+            setArmeCeinture(arme); // met l'arme à la ceinture
           }
         }}
       />
