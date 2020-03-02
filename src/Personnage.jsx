@@ -30,10 +30,11 @@ const Personnage = () => {
     <div className="personnage">
       <Stuff
         onClickMd={() => {
-          if (armeDroite === undefined) { // si armeDroite est undefined alors :
-            setArmeDroite(quelArme);  // mise a jour de QuelArme avec quelArme en parametre
-            setArmes(armes.filter(restant => restant !== quelArme)); // on met une arme 
-            setQuelArme(undefined); 
+          if (armeDroite === undefined) {
+            // si armeDroite est undefined alors :
+            setArmeDroite(quelArme); // mise a jour de QuelArme avec quelArme en parametre
+            setArmes(armes.filter(restant => restant !== quelArme)); // on met une arme
+            setQuelArme(undefined);
           } else {
             setArmeDroite(setArmes([...armes, armeDroite])); // on repose l'arme dans l'armurerie
           }
@@ -62,6 +63,7 @@ const Personnage = () => {
       />
       <Armurie
         armes={armes}
+        armeSelectionee={quelArme}
         onClickArme={arme => {
           setQuelArme(arme);
 
