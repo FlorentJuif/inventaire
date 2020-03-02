@@ -32,11 +32,14 @@ const Personnage = () => {
         onClickMd={() => {
           if (armeDroite === undefined) {
             // si armeDroite est undefined alors :
-            setArmeDroite(quelArme); // mise a jour de QuelArme avec quelArme en parametre
-            setArmes(armes.filter(restant => restant !== quelArme)); // on met une arme
-            setQuelArme(undefined);
+            setArmeDroite(quelArme); // on met l'arme
+            setArmes(armes.filter(restant => restant !== quelArme)); // suprime l'arme de l'inventaire quand posée sur MD
+            setQuelArme(undefined); // une fois l'amre mise, le clic n'a plus d'arme
           } else {
-            setArmeDroite(setArmes([...armes, armeDroite])); // on repose l'arme dans l'armurerie
+            let newArmes=[...armes,armeDroite]
+            setArmes(newArmes.filter(restant => restant !== quelArme))
+            setArmeDroite(quelArme)
+            setQuelArme(undefined)
           }
         }}
         onClickMg={() => {
