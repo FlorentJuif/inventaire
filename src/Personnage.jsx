@@ -48,7 +48,10 @@ const Personnage = () => {
             setArmes(armes.filter(restant => restant !== quelArme));
             setQuelArme(undefined);
           } else {
-            setArmeGauche(setArmes([...armes, armeGauche]));
+            let newArmes=[...armes,armeGauche]
+            setArmes(newArmes.filter(restant=>restant!==quelArme))
+            setArmeGauche(quelArme)
+            setQuelArme(undefined)
           }
         }}
         onClickCeinture={() => {
@@ -57,7 +60,10 @@ const Personnage = () => {
             setArmes(armes.filter(restant => restant !== quelArme));
             setQuelArme(undefined);
           } else {
-            setArmeCeinture(setArmes([...armes, armeCeinture]));
+          let newArmes=[...armes,armeCeinture]
+          setArmes(newArmes.filter(restant=>restant!==quelArme))
+          setArmeCeinture(quelArme)
+          setQuelArme(undefined)
           }
         }}
         armeDroite={armeDroite}
