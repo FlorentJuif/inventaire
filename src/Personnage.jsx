@@ -3,11 +3,13 @@ import Armurie from "./armurie";
 import Stuff from "./Stuff";
 import { useEffect } from "react";
 
+const API_URL = "https://inventory-api-2.herokuapp.com"
+
 const Personnage = () => {
   const [armes, setArmes] = useState([]);
 
   useEffect(() => {
-    fetch("/weapons")
+    fetch(`${API_URL}/weapons`)
       .then(info => {
         return info.json();
       })
@@ -15,7 +17,7 @@ const Personnage = () => {
         const apiArmes = data.map(({ name, imageUrl }) => {
           return {
             name,
-            image:imageUrl
+            image: `${API_URL}${imageUrl}`
           };
         });
         setArmes(apiArmes);
