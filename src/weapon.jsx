@@ -1,8 +1,10 @@
 import React from 'react'
 
-const Weapon=()=>{
+const Weapon=({nom,image,onClick})=>{
     return(
-        <div>
+        <div onClick={onClick}>
+            {nom}
+           <img src={image}/>
             Je suis une arme
         </div>
     )
