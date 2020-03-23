@@ -1,13 +1,11 @@
 import React from 'react';
-import Weapon from './weapon'
+import Armurerie from './Armurerie'
 import './App.css';
 
 function App() {
   return (
     <div className="App">
-      <Weapon/>
-      <Weapon/>
-      
+      <Armurerie/>
     </div>
   );
 }
