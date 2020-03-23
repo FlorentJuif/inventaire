@@ -16,8 +16,8 @@ const Armurerie = () => {
   ];
   return (
     <div className="armurerie">
-      {armes.map(armes => (
-        <Weapon nom={armes.nom} image={armes.image} />
+      {armes.map(({ nom, image }) => (
+        <Weapon nom={nom} image={image} />
       ))}
     </div>
   );
