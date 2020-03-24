@@ -20,6 +20,9 @@ const Armurerie = () => {
       {armes.map(armes => (
         <Weapon nom={armes.nom} image={armes.image} />
       ))}
+      <button onClick={()=>setArmes(armes+'NewWeapon')}>
+        Add Weapon
+      </button>
     </div>
   );
 };
