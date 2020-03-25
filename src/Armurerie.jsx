@@ -17,9 +17,9 @@ const Armurerie = () => {
 
   return (
     <div className="armurerie">
-      {armes.map(armes => (
+      {armes.map(arme => (
           
-        <Weapon key={armes.nom} nom={armes.nom} image={armes.image} />
+        <Weapon key={arme.nom} nom={arme.nom} image={arme.image} />
       ))}
       <button
         onClick={() =>
