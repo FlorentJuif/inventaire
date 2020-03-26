@@ -1,10 +1,10 @@
 import React from "react";
 
-const Weapon = ({ nom, image }) => {
+const Weapon = ({ name, picture }) => {
   return (
     <div>
-      {nom}
-      <img src={image} />
+      {name}
+      <img src={picture} />
     </div>
   );
 };
