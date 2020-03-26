@@ -1,20 +1,17 @@
 import React from "react";
 import Weapon from "./weapon";
 
-const Armurerie = props => {
-  let armes = props.armes;
+const Armory = ({props}) => {
+  let weapons = props.weapons;
 
   return (
     <div className="armurerie">
-      {armes.map(arme => (
-        <Weapon
-          key={arme.nom}
-          nom={arme.nom}
-          image={arme.image}/>
+      {weapons.map(weapon => (
+        <Weapon key={weapon.name} name={weapon.name} picture={weapon.name} />
       ))}
-     <button onClick={props.onClick}>Add Weapon</button>
+      <button onClick={props.onClick}>Add Weapon</button>
     </div>
   );
 };
 
-export default Armurerie;
+export default Armory;
