@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import Armory from "./Armurerie";
+import Armory from "./armory";
 
 const API_URL = "https://inventory-api-2.herokuapp.com";
 
@@ -12,13 +12,13 @@ const Character = () => {
         return weapon.json();
       })
       .then(data => {
-        const apiArmes = data.map(({ name, imageUrl }) => {
+        const apiWeapon = data.map(({ name, imageUrl }) => {
           return {
             name,
-            image: `${API_URL}${imageUrl}`
+            picture: imageUrl
           };
         });
-        setWeapons(apiArmes);
+        setWeapons(apiWeapon);
       });
   }, []);
 

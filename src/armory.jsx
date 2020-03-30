@@ -7,7 +7,7 @@ const Armory = ({weapons,onClick}) => {
   return (
     <div className="armurerie">
       {weapons.map(weapon => (
-        <Weapon key={weapon.name} name={weapon.name} picture={weapon.name} />
+        <Weapon key={weapon.name} name={weapon.name} picture={weapon.picture} />
       ))}
       <button onClick={onClick}>Add Weapon</button>
     </div>

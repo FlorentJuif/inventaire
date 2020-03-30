@@ -1,6 +1,6 @@
 import React from 'react';
 import './App.css';
-import Character from './Personnage';
+import Character from './Character';
 
 function App() {
   return (

@@ -4,7 +4,7 @@ const Weapon = ({ name, picture }) => {
   return (
     <div>
       {name}
-      <img src={picture} />
+      <img  src={picture} alt='Weapon Pic' />
     </div>
   );
 };
