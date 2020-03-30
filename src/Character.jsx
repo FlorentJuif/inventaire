@@ -15,7 +15,7 @@ const Character = () => {
         const apiWeapon = data.map(({ name, imageUrl }) => {
           return {
             name,
-            picture: imageUrl
+            picture: `${API_URL}${imageUrl}`
           };
         });
         setWeapons(apiWeapon);
